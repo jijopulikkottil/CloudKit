@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vh5-aT-3Dr">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Today Pic View Controller-->
+        <scene sceneID="hZG-1D-ldn">
+            <objects>
+                <viewController id="vh5-aT-3Dr" customClass="TodayPicViewController" customModule="mycloud" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4wn-lg-Ur8">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="empty" translatesAutoresizingMaskIntoConstraints="NO" id="YRa-9C-an6">
+                                <rect key="frame" x="94.5" y="156.5" width="225" height="225"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="YRa-9C-an6" secondAttribute="height" multiplier="1:1" id="dG4-wQ-cIC"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BBR-u4-JmD">
+                                <rect key="frame" x="169.5" y="401.5" width="75" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="BBR-u4-JmD" firstAttribute="top" secondItem="YRa-9C-an6" secondAttribute="bottom" constant="20" id="JZC-l5-Qdb"/>
+                            <constraint firstItem="YRa-9C-an6" firstAttribute="centerY" secondItem="4wn-lg-Ur8" secondAttribute="centerY" multiplier="0.6" id="Jce-qe-phM"/>
+                            <constraint firstItem="KPm-TG-mkc" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="YRa-9C-an6" secondAttribute="trailing" constant="20" id="YHS-bx-ZMZ"/>
+                            <constraint firstItem="BBR-u4-JmD" firstAttribute="centerX" secondItem="4wn-lg-Ur8" secondAttribute="centerX" id="n0N-zg-Msr"/>
+                            <constraint firstItem="YRa-9C-an6" firstAttribute="centerX" secondItem="4wn-lg-Ur8" secondAttribute="centerX" id="sg6-Ay-np2"/>
+                            <constraint firstItem="YRa-9C-an6" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="KPm-TG-mkc" secondAttribute="leading" constant="20" id="vV0-cy-FH8"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="KPm-TG-mkc"/>
+                    </view>
+                    <connections>
+                        <outlet property="descLabel" destination="BBR-u4-JmD" id="jnX-Zj-FqG"/>
+                        <outlet property="imageView" destination="YRa-9C-an6" id="aQ7-VL-202"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hbi-1d-SRo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-888" y="147"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="empty" width="225" height="225"/>
+    </resources>
+</document>

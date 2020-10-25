@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fIB-DI-nh2">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Add Photo View Controller-->
+        <scene sceneID="vLQ-ht-tTx">
+            <objects>
+                <viewController id="fIB-DI-nh2" customClass="AddPhotoViewController" customModule="mycloud" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xjQ-jO-wmi">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="empty" translatesAutoresizingMaskIntoConstraints="NO" id="b8T-4S-eif">
+                                <rect key="frame" x="94.5" y="156.5" width="225" height="225"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="b8T-4S-eif" secondAttribute="height" multiplier="1:1" id="n7R-9F-Z1U"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rha-bi-u9H">
+                                <rect key="frame" x="364" y="44" width="30" height="30"/>
+                                <state key="normal" title="Add">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default" weight="medium"/>
+                                </state>
+                                <connections>
+                                    <action selector="addPhotoTappedWithSender:" destination="fIB-DI-nh2" eventType="touchUpInside" id="WcV-Q7-fdz"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WF7-Jj-sH8">
+                                <rect key="frame" x="20" y="401.5" width="374" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XA7-Iq-PWM">
+                                <rect key="frame" x="188.5" y="475.5" width="37" height="30"/>
+                                <state key="normal" title="SAVE"/>
+                                <connections>
+                                    <action selector="saveTappedWithSender:" destination="fIB-DI-nh2" eventType="touchUpInside" id="R8z-rS-XpC"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="WF7-Jj-sH8" firstAttribute="top" secondItem="b8T-4S-eif" secondAttribute="bottom" constant="20" id="7Oi-Ty-THQ"/>
+                            <constraint firstItem="WF7-Jj-sH8" firstAttribute="leading" secondItem="Zei-YF-tML" secondAttribute="leading" constant="20" id="QV9-fn-5ec"/>
+                            <constraint firstItem="Zei-YF-tML" firstAttribute="trailing" secondItem="Rha-bi-u9H" secondAttribute="trailing" constant="20" id="R1D-Lo-whi"/>
+                            <constraint firstItem="Zei-YF-tML" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="b8T-4S-eif" secondAttribute="trailing" constant="20" id="RlK-4W-8Yu"/>
+                            <constraint firstItem="Rha-bi-u9H" firstAttribute="top" secondItem="Zei-YF-tML" secondAttribute="top" id="Tvz-WU-het"/>
+                            <constraint firstItem="Zei-YF-tML" firstAttribute="trailing" secondItem="WF7-Jj-sH8" secondAttribute="trailing" constant="20" id="Z8M-1L-PCW"/>
+                            <constraint firstItem="b8T-4S-eif" firstAttribute="centerY" secondItem="xjQ-jO-wmi" secondAttribute="centerY" multiplier="0.6" id="ax9-kg-ndU"/>
+                            <constraint firstItem="XA7-Iq-PWM" firstAttribute="top" secondItem="WF7-Jj-sH8" secondAttribute="bottom" constant="40" id="e1b-DG-6NO"/>
+                            <constraint firstItem="b8T-4S-eif" firstAttribute="centerX" secondItem="xjQ-jO-wmi" secondAttribute="centerX" id="ePR-K5-faW"/>
+                            <constraint firstItem="XA7-Iq-PWM" firstAttribute="centerX" secondItem="xjQ-jO-wmi" secondAttribute="centerX" id="o54-sT-CvZ"/>
+                            <constraint firstItem="b8T-4S-eif" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Zei-YF-tML" secondAttribute="leading" constant="20" id="oXu-1a-xca"/>
+                            <constraint firstItem="WF7-Jj-sH8" firstAttribute="centerX" secondItem="xjQ-jO-wmi" secondAttribute="centerX" id="r2k-Oi-6Om"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Zei-YF-tML"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="b8T-4S-eif" id="5nd-2J-yGj"/>
+                        <outlet property="textField" destination="WF7-Jj-sH8" id="dZq-u8-i0l"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="F26-Q7-9jc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-912" y="825"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="empty" width="225" height="225"/>
+    </resources>
+</document>

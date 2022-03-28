@@ -1,10 +1,6 @@
 name: Deploying
 on:
   push:
-    branches:
-      - master
-  release:
-    types: [created]
 jobs:
   version-update:
     if: github.event_name == 'push'

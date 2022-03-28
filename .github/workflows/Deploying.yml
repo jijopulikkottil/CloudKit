@@ -27,6 +27,5 @@ jobs:
         id: updatedversion
       - name: Set version and build number
         run: |
-          version=$(agvtool what-marketing-version -terse1)
-          echo "version is $(version)"
-          echo "version is ${{version}}"
+          echo "version=$(agvtool what-marketing-version -terse1)" >> $GITHUB_ENV
+          echo "version is ${{env.version}}"

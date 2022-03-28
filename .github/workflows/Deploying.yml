@@ -27,4 +27,4 @@ jobs:
         id: updatedversion
       - name: Set version and build number
         run: |
-          echo "version 0 is $(agvtool what-marketing-version -terse1)"
+          version=$(agvtool what-marketing-version -terse1)

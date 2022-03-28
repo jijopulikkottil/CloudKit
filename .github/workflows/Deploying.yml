@@ -28,3 +28,5 @@ jobs:
       - name: Set version and build number
         run: |
           version=$(agvtool what-marketing-version -terse1)
+          echo "version is $(version)"
+          echo "version is ${{version}}"

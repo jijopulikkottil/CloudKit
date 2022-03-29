@@ -15,7 +15,6 @@ jobs:
          echo "::set-output name=LATEST_TAG_NUMBER::$(git describe --tags `git rev-list --tags --max-count=1`)"
         id: dateversion
     outputs:
-     if: github.event_name == 'push'
      versiontext: ${{ steps.dateversion.outputs.VERSION }}
   version-update:
     if: github.event_name == 'push'

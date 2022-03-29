@@ -1,4 +1,4 @@
-name: Deploying
+name: Testing
 on:
   push:
     branches:

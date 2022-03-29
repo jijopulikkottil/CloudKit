@@ -23,7 +23,7 @@ jobs:
     if: github.event_name == 'push'
     name: Version increment
     runs-on: macOS-latest
-    needs: versionjob
+    needs: [versionjob]
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2

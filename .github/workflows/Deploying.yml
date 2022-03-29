@@ -17,8 +17,6 @@ jobs:
     outputs:
      if: github.event_name == 'push'
      versiontext: ${{ steps.dateversion.outputs.VERSION }}
-     if: github.event_name == 'release'
-     versiontext: ${{ steps.dateversion.outputs.LATEST_TAG_NUMBER }}
   version-update:
     if: github.event_name == 'push'
     name: Version increment

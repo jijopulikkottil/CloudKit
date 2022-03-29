@@ -7,24 +7,18 @@ on:
     types: [created]
 jobs:
   versionjob:
-    if: github.event_name == 'push'
     runs-on: macOS-latest
     steps:
       - name: data as version
         run: |
          echo "::set-output name=VERSION::$(date +'%Y.%-m.%-d')"
+         echo "::set-output name=LATEST_TAG_NUMBER::$(git describe --tags `git rev-list --tags --max-count=1`)"
         id: dateversion
     outputs:
+     if: github.event_name == 'push'
      versiontext: ${{ steps.dateversion.outputs.VERSION }}
-    if: github.event_name == 'release'
-    runs-on: macOS-latest
-    steps:
-      - name: tag as version
-        run: |
-         echo "::set-output name=LATEST_TAG_NUMBER::$(git describe --tags `git rev-list --tags --max-count=1`)"
-        id: releaseversion
-    outputs:
-     versiontext: ${{ steps.releaseversion.outputs.LATEST_TAG_NUMBER }}
+     if: github.event_name == 'release'
+     versiontext: ${{ steps.dateversion.outputs.LATEST_TAG_NUMBER }}
   version-update:
     if: github.event_name == 'push'
     name: Version increment

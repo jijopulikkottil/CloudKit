@@ -7,14 +7,15 @@ on:
     types: [created]
 jobs:
   versionjob:
+    name: Get Version
     runs-on: macOS-latest
     steps:
-      - name: data as version
+      - name: version as per event
         run: |
         if: github.event_name == 'push'
          echo "::set-output name=VERSION::$(date +'%Y.%-m.%-d')"
         if: github.event_name == 'release'
-         echo "::set-output name=VERSION::$(git describe --tags `git rev-list --tags --max-count=1`)"
+         echo "::set-output name=VERSION::$(date +'%Y/%m/%d')"
         id: dateversion
     outputs:
      versiontext: ${{ steps.dateversion.outputs.VERSION }}

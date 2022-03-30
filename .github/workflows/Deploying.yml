@@ -11,8 +11,10 @@ jobs:
     steps:
       - name: data as version
         run: |
+        if: github.event_name == 'push'
          echo "::set-output name=VERSION::$(date +'%Y.%-m.%-d')"
-         echo "::set-output name=LATEST_TAG_NUMBER::$(git describe --tags `git rev-list --tags --max-count=1`)"
+        if: github.event_name == 'release'
+         echo "::set-output name=VERSION::$(git describe --tags `git rev-list --tags --max-count=1`)"
         id: dateversion
     outputs:
      versiontext: ${{ steps.dateversion.outputs.VERSION }}
